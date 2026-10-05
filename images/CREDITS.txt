@@ -1,0 +1,7 @@
+Image sources (all from Wikimedia Commons; public domain or CC0, no attribution required)
+hero-clinician.jpg          - Navy Medical Team Supports Louisiana Hospital (US Navy, public domain), mirrored
+intro-ward-round.jpg        - Doctor examines patient with stethoscope (2) (US government, public domain)
+approach-consult.jpg        - Health professional consults with patient (US government, public domain)
+cta-bg.jpg                  - same photo as above, darkened
+why-corridor.jpg            - Corridor on the second level - NAL hospital 1 (CC0)
+organisations-corridor.jpg  - Corridor on the second level - NAL hospital 3 (CC0)

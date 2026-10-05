@@ -86,6 +86,72 @@
 
     <link rel="stylesheet" href="https://www.candidzone.net/assets/css/responsive.css" />
 
+    <style>
+        /* Section layout variations - base brand (navy / lime / Outfit) unchanged */
+        .hz-s03,.hz-s05,.hz-s06,.hz-s07,.hz-s08{padding:60px 0}
+        .hz-s04{padding:70px 0;margin-top:30px}
+        .hz-s09{padding:70px 0}
+
+        /* 03 - top-accent cards, left aligned */
+        .hz-s03 .ouu-box{text-align:left;border:0;border-top:4px solid var(--theme-color);border-radius:4px 4px 14px 14px;background:#fff;box-shadow:0 10px 30px rgba(42,40,112,.10);padding:28px 24px;transition:transform .3s,box-shadow .3s}
+        .hz-s03 .ouu-box:hover{transform:translateY(-6px);box-shadow:0 16px 38px rgba(42,40,112,.18);border-top-color:var(--theme-color2)}
+
+        /* 04 - dark navy band, glass cards */
+        .hz-s04{background:linear-gradient(135deg,#1c1a52,#2a2870 60%,#3b38a0)}
+        .hz-s04 .sec-title,.hz-s04 .title-area p{color:#fff}
+        .hz-s04 .ferr-sebox{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.22);border-radius:14px;text-align:left;padding:26px 24px;transition:background .3s,transform .3s}
+        .hz-s04 .ferr-sebox:hover{background:rgba(255,255,255,.15);transform:translateY(-4px)}
+        .hz-s04 .ferr-sebox-content h3{color:var(--theme-color2);font-size:20px}
+        .hz-s04 .ferr-sebox-content p{color:#e9e9f5;text-align:left;margin:0}
+
+        /* 05 - tinted background, numbered circle cards */
+        .hz-s05{background:#f3f5fb}
+        .hz-s05 .row.justify-content-center:last-child{counter-reset:hz5}
+        .hz-s05 .corrp-sebox{background:#fff;border-radius:50px 14px 14px 14px;text-align:left;padding:34px 24px 14px;box-shadow:0 6px 22px rgba(0,0,0,.06);margin-top:18px;counter-increment:hz5}
+        .hz-s05 .corrp-sebox:before{content:counter(hz5);position:absolute;top:-18px;left:22px;width:42px;height:42px;border-radius:50%;background:var(--theme-color2);color:#fff;font-weight:700;font-size:18px;line-height:42px;text-align:center}
+        .hz-s05 .corrp-sebox-content h3{color:var(--theme-color)}
+        .hz-s05 .corrp-sebox-content p{text-align:left}
+
+        /* 06 - list-style cards with lime side bar, two per row */
+        .hz-s06 .col-lg-4{flex:0 0 50%;max-width:50%}
+        .hz-s06 .ouu-box{display:flex;align-items:center;text-align:left;border:0;border-left:6px solid var(--theme-color2);border-radius:0 12px 12px 0;background:#f8f9fc;box-shadow:none;padding:24px 28px;margin-bottom:22px;transition:background .3s,padding-left .3s}
+        .hz-s06 .ouu-box:hover{background:#fff;box-shadow:0 8px 26px rgba(0,0,0,.08);padding-left:36px}
+        .hz-s06 .ouu-box-content p{margin:0}
+
+        /* 07 - timeline style steps with connector line */
+        .hz-s07{background:#fff}
+        .hz-s07 .row.justify-content-center:last-child{counter-reset:hz7}
+        .hz-s07 .corrp-sebox{background:#fff;border:1px solid #e3e6f0;border-top:5px solid var(--theme-color);border-radius:0 0 14px 14px;text-align:left;padding:26px 22px 8px;box-shadow:0 4px 16px rgba(0,0,0,.04);margin-bottom:30px}
+        .hz-s07 .corrp-sebox:after{content:"";position:absolute;top:-11px;right:22px;width:16px;height:16px;border-radius:50%;background:var(--theme-color2);border:3px solid #fff;box-shadow:0 0 0 2px var(--theme-color)}
+        .hz-s07 .corrp-sebox-content h3{color:var(--theme-color);font-size:20px}
+        .hz-s07 .corrp-sebox-content p{text-align:left}
+
+        /* 08 - soft green band, elevated cards with tick marker */
+        .hz-s08{background:var(--smoke-color4)}
+        .hz-s08 .ferr-sebox{border:0;border-radius:18px;background:#fff;text-align:left;padding:28px 24px 14px 74px;box-shadow:0 12px 30px rgba(42,40,112,.09)}
+        .hz-s08 .ferr-sebox:before{content:"✓";position:absolute;left:22px;top:26px;width:36px;height:36px;border-radius:50%;background:var(--theme-color);color:#fff;font-size:18px;line-height:36px;text-align:center}
+        .hz-s08 .ferr-sebox-content h3{color:var(--theme-color);font-weight:600}
+        .hz-s08 .ferr-sebox-content p{text-align:left}
+
+        /* 09 - navy panel call-out */
+        .hz-s09 .acc-aa{background:linear-gradient(135deg,#2a2870,#1c1a52);border-radius:28px;padding:56px 40px;color:#fff;box-shadow:0 20px 50px rgba(42,40,112,.28)}
+        .hz-s09 .sec-title,.hz-s09 .acc-aa p{color:#fff}
+        .hz-s09 .sub-title{color:var(--theme-color2)}
+
+
+        /* Photo strips and image backgrounds */
+        .hz-photo{margin:6px 0 34px;border-radius:20px;overflow:hidden;box-shadow:0 14px 34px rgba(42,40,112,.18)}
+        .hz-photo img{display:block;width:100%;height:340px;object-fit:cover;object-position:center 35%}
+        .hz-s09 .acc-aa{background:linear-gradient(135deg,rgba(42,40,112,.92),rgba(28,26,82,.88)),url("images/organisations-corridor.jpg") center/cover no-repeat}
+        .joss-sec-bb .other-sec-bb-img img{object-position:center 30%}
+        @media (max-width:767px){.hz-photo img{height:220px}}
+        @media (max-width:767px){
+            .hz-s06 .col-lg-4{flex:0 0 100%;max-width:100%}
+            .hz-s09 .acc-aa{padding:36px 20px}
+        }
+    </style>
+
+
 
 <!-- Organization Schema (sitewide) -->
 <script type="application/ld+json">{"@context":"https://schema.org","@type":["EmploymentAgency","LocalBusiness"],"name":"Candidzone","legalName":"Candidzone L.L.C.","url":"https://www.candidzone.net","logo":"https://www.candidzone.net/assets/img/logo.png","image":"https://www.candidzone.net/assets/img/logo.png","description":"Candidzone is an HR consulting and recruitment organization providing recruitment, staffing, EOR, manpower supply, and training solutions across Qatar and the wider GCC region.","address":{"@type":"PostalAddress","streetAddress":"1st Floor, UCA Building, Old Airport Road","postOfficeBoxNumber":"212103","addressLocality":"Doha","addressCountry":"QA"},"geo":{"@type":"GeoCoordinates","latitude":25.2777999999999991587174008600413799285888671875,"longitude":51.53482699999999994133759173564612865447998046875},"hasMap":"https://www.google.com/maps?q=Candidzone,Old+Airport+Road,Doha,Qatar","contactPoint":[{"@type":"ContactPoint","telephone":"+974-4037-2807","contactType":"customer service","areaServed":"QA","email":"info@candidzone.net"},{"@type":"ContactPoint","telephone":"+968-2205-9101","contactType":"customer service","areaServed":"OM"},{"@type":"ContactPoint","telephone":"+971-50-402-5011","contactType":"customer service","areaServed":"AE"},{"@type":"ContactPoint","telephone":"+91-7511190900","contactType":"customer service","areaServed":"IN"}],"sameAs":["https://www.linkedin.com/company/candidzonehrc","https://www.instagram.com/candidzonehrc/","https://www.facebook.com/candidzonehrc","https://www.tiktok.com/@candidzonehrc","https://www.youtube.com/@Candidzonehrc","https://x.com/candidzonehrc"],"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.4","bestRating":"5","reviewCount":"349"}}</script>
@@ -394,8 +460,8 @@
     <div class="job-inner-bannersec">
         <div class="banner-bg-wrapper">
             <!-- Replace with a dedicated healthcare banner image when available -->
-            <img src="https://www.candidzone.net/assets/img/industries/i6.jpg"
-                alt="Healthcare professionals working together in a hospital environment, representing healthcare recruitment and workforce solutions in Qatar."
+            <img src="images/hero-clinician.jpg"
+                alt="Healthcare professional caring for a patient in a hospital ward, representing healthcare recruitment and workforce solutions in Qatar."
                 title="Healthcare Recruitment &amp; Workforce Solutions" class="banner-bg-img" height="100%">
         </div>
 
@@ -467,8 +533,8 @@
 
                 <div class="col-lg-6 ">
                     <div class="other-sec-bb-img ">
-                        <img src="https://www.candidzone.net/assets/img/industries/i6.jpg"
-                            alt="Healthcare recruitment specialists reviewing qualified nursing and medical profiles for hospitals in Qatar."
+                        <img src="images/intro-ward-round.jpg"
+                            alt="Doctors on a ward round with a patient, representing qualified healthcare professionals recruited for hospitals in Qatar."
                             title="Healthcare Recruitment in Qatar" width="100%">
 
                     </div>
@@ -483,7 +549,7 @@
 
     <!-- ============== 03 - FEATURE SERVICE ============== -->
 
-    <div class="ooo-tsec">
+    <div class="ooo-tsec hz-s03">
 
         <div class="container">
             <div class="row justify-content-center">
@@ -543,7 +609,7 @@
 
     <!-- ============== 04 - SPECIALISATIONS ============== -->
 
-    <div class="Staffig-bsec-sec">
+    <div class="Staffig-bsec-sec hz-s04">
 
         <div class="container">
             <div class="row justify-content-center">
@@ -641,7 +707,7 @@
 
     <!-- ============== 05 - OUR APPROACH ============== -->
 
-    <div class="ooo-tsec">
+    <div class="ooo-tsec hz-s05">
 
         <div class="container">
             <div class="row justify-content-center">
@@ -657,6 +723,11 @@
                 </div>
             </div>
 
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="hz-photo"><img src="images/approach-consult.jpg" alt="A healthcare professional discussing care with a patient, reflecting a recruitment approach that looks beyond the job description." loading="lazy"></div>
+                </div>
+            </div>
             <div class="row justify-content-center">
 
                 <div class="col-lg-3 col-md-6 col-sm-12 d-flex">
@@ -713,7 +784,7 @@
 
     <!-- ============== 06 - SERVICES ============== -->
 
-    <div class="ooo-tsec">
+    <div class="ooo-tsec hz-s06">
 
         <div class="container">
             <div class="row justify-content-center">
@@ -791,7 +862,7 @@
 
     <!-- ============== 07 - PROCESS ============== -->
 
-    <div class="Staffig-bsec-sec">
+    <div class="Staffig-bsec-sec hz-s07">
 
         <div class="container">
             <div class="row justify-content-center">
@@ -883,7 +954,7 @@
 
     <!-- ============== 08 - WHY CANDIDZONE ============== -->
 
-    <div class="ooo-tsec">
+    <div class="ooo-tsec hz-s08">
 
         <div class="container">
             <div class="row justify-content-center">
@@ -897,6 +968,11 @@
                 </div>
             </div>
 
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="hz-photo"><img src="images/why-corridor.jpg" alt="A long hospital corridor, representing structured and scalable healthcare workforce solutions." loading="lazy"></div>
+                </div>
+            </div>
             <div class="row justify-content-center">
 
                 <div class="col-lg-4 col-md-6 col-sm-12 d-flex">
@@ -967,7 +1043,7 @@
 
     <!-- ============== 09 - FOR HEALTHCARE ORGANISATIONS ============== -->
 
-    <div class="Aboo-sec">
+    <div class="Aboo-sec hz-s09">
 
         <div class="container">
 
@@ -1039,7 +1115,7 @@
 
     <!-- ============== 11 - FINAL CTA ============== -->
 
-    <div class="Sucess-story-sec" data-bg-src="https://www.candidzone.net/assets/img/succc-bg.jpg" id="form">
+    <div class="Sucess-story-sec" data-bg-src="images/cta-bg.jpg" id="form">
 
         <div class="container">
             <div class="row align-items-center justify-content-between">
